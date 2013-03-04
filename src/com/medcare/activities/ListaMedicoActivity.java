@@ -3,6 +3,7 @@ package com.medcare.activities;
 import java.util.ArrayList;
 
 import com.medcare.R;
+import com.medcare.mundo.MedCare;
 import com.medcare.mundo.Medico;
 
 import android.app.Activity;
@@ -64,9 +65,11 @@ public class ListaMedicoActivity extends Activity
 	
 	public void cargarMedicos()
 	{
-		list = new ArrayList<Medico>();
-		list.add(new Medico("Juan", "Bogotá", 2581685+"", "Cra 123 # 45-67", "Medico"));
-		list.add(new Medico("Ana", "Bogotá", 2574136+"", "Cra 147 # 58-69", "Médico"));
+		MedCare m = MedCare.darInstancia();
+		m.cargarInfo(this);
+		list = m.getMedicos();
+//		list.add(new Medico("Juan", "Bogotá", 2581685+"", "Cra 123 # 45-67", "Medico"));
+//		list.add(new Medico("Ana", "Bogotá", 2574136+"", "Cra 147 # 58-69", "Médico"));
 		ArrayAdapter<Medico> adapter = new ArrayAdapter<Medico>(this, android.R.layout.simple_list_item_1, list);
 		lista.setAdapter(adapter);
 	}

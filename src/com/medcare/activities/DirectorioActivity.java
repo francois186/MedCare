@@ -20,7 +20,6 @@ public class DirectorioActivity extends Activity
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
-		
 		medcare = MedCare.darInstancia();
 		setContentView(R.layout.activity_directorio);
 		inicializarDatos();
