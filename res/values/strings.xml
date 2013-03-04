@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MedCare</string>
+    <string name="action_settings">Settings</string>
+    <string name="butt_guia">Guía Primeros Auxilios</string>
+    <string name="butt_directorio">Directorio Médico</string>
+    <string name="copyright">\u00A9 François Jeanneret y Laura Morales - Grupo 13</string>
+	<string name="escoge_ciudad">Selecciona tu ciudad: </string>
+	<string name="escoge_salud">Selecciona la especialidad: </string>
+	<string name="buscar">Buscar</string>
+	<string name="atras">Atrás</string>
+	<string name="lista_medicos">Lista de médicos:</string>
+	<string name="agendar">Agendar Cita</string>
+	<string name="alarma">Colocar recordatorio</string>
+	<string name="crear_calendario">Crear</string>
+	<string name="fecha">Fecha:</string>
+	<string name="hora">Hora:</string>
+</resources>

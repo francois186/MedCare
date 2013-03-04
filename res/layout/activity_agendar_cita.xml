@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+	
+	    <TextView
+	        android:id="@+id/texto_agendar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="25dp"
+	        android:layout_marginTop="20dp"
+	        android:text="@string/agendar"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <TextView
+	        android:id="@+id/texto_fecha"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="25dp"
+	        android:layout_marginTop="15dp"
+	        android:text="@string/fecha"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	    
+	    <DatePicker
+	        android:id="@+id/fecha_crear_calendario"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_marginTop="15dp" />
+	
+	    <TextView
+	        android:id="@+id/texto_hora"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="25dp"
+	        android:layout_marginTop="15dp"
+	        android:text="@string/hora"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <TimePicker
+	        android:id="@+id/tiempo_crear_calendario"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_marginTop="15dp" />
+	    
+	    <Button
+	        android:id="@+id/boton_crear_calendario"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="25dp"
+	        android:layout_marginRight="25dp"
+	        android:layout_marginTop="15dp"
+	        android:text="@string/crear_calendario" 
+	        android:onClick="crearEventoCalendario" />
+	
+	</LinearLayout>
+</ScrollView>
