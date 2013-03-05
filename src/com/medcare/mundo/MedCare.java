@@ -9,13 +9,14 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Environment;
 
-public class MedCare 
+public class MedCare extends Thread
 {
 	
 	public final static String ruta = Environment.getExternalStorageDirectory()+"/guia_lista.txt";
+	private static MedCare instancia;
 	private ArrayList<Medico> medicos;
 	private ArrayList<String> especialidades;
-	private static MedCare instancia;
+	private Context ctx;
 	
 	public MedCare()
 	{
@@ -23,34 +24,9 @@ public class MedCare
 		especialidades = new ArrayList<String>();
 	}
 
-	public void cargarInfo(Context context)
-	{
-		try
-		{
-			AssetManager am = context.getAssets();
-			InputStream is = am.open("guia_lista.txt");
-			BufferedReader bf = new BufferedReader(new InputStreamReader(is));
-			String s;
-			while ((s = bf.readLine()) != null)
-			{
-				System.out.println(s);
-				System.out.println("------------");
-				String[] info = s.split("%");
-				Medico m = new Medico(info[1], info[0], info[5], info[4], info[3]);
-				this.medicos.add(m);
-			}
-			is.close();
-			bf.close();
-		}
-		catch (Exception e)
-		{
-			e.getMessage();
-		}
-	}
-	
 	public String[] darCiudades()
 	{
-		String [] resp = {"Arauca","Bogotá","Chía","Duitama","Florencia","Fusagasugá","Girardot","Ibagué","La Mesa","Madrid","Neiva","Sogamoso","Tauramena","Tunja","Villavicencio","Zipaquirá"};		
+		String [] resp = {"Todas","Arauca","Bogotá","Chía","Duitama","Florencia","Fusagasugá","Girardot","Ibagué","La Mesa","Madrid","Neiva","Sogamoso","Tauramena","Tunja","Villavicencio","Zipaquirá"};		
 		return resp;
 	}
 	
@@ -86,5 +62,65 @@ public class MedCare
 	{
 		return medicos;
 	}
-
+	
+	public void setContext(Context context)
+	{
+		ctx = context;
+	}
+	
+	/**
+	 * Método que carga en un hilo a parte lo médicos del directorio
+	 * @pre: es necesario llamar primero el método setContext(), pasándole
+	 * el contexto de la aplicación.
+	 */
+	@Override
+	public void run()
+	{
+		try
+		{
+			//Se debe llamar primero setContext()
+			AssetManager am = ctx.getAssets();
+			InputStream is = am.open("guia_lista.txt");
+			BufferedReader bf = new BufferedReader(new InputStreamReader(is));
+			String s;
+			while ((s = bf.readLine()) != null)
+			{
+				String[] info = s.split("%");
+				Medico m = new Medico(info[1], info[0], info[5], info[4], info[3]);
+				this.medicos.add(m);
+			}
+			is.close();
+			bf.close();
+		}
+		catch (Exception e)
+		{
+			e.getMessage();
+		}
+	}
+	
+	public void setEspecialidades()
+	{
+		String ultimaEsp = "";
+		for (int i = 0; i < medicos.size(); i++)
+		{
+			String esp = medicos.get(i).getEspecialidad();
+			if (esp.equals(ultimaEsp) || esp.equals("sub"))
+				continue;
+			else
+			{
+				boolean esta = false;
+				for (int j = 0; j < especialidades.size(); j++)
+					if (esp.equals(especialidades.get(j)))
+					{
+						esta = true;
+						break;
+					}
+				if (!esta)
+				{
+					ultimaEsp = esp;
+					especialidades.add(esp);
+				}
+			}
+		}
+	}
 }

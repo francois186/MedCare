@@ -1,6 +1,7 @@
 package com.medcare.activities;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import com.medcare.R;
 import com.medcare.mundo.MedCare;
@@ -66,11 +67,16 @@ public class ListaMedicoActivity extends Activity
 	public void cargarMedicos()
 	{
 		MedCare m = MedCare.darInstancia();
-		m.cargarInfo(this);
 		list = m.getMedicos();
-//		list.add(new Medico("Juan", "Bogotá", 2581685+"", "Cra 123 # 45-67", "Medico"));
-//		list.add(new Medico("Ana", "Bogotá", 2574136+"", "Cra 147 # 58-69", "Médico"));
 		ArrayAdapter<Medico> adapter = new ArrayAdapter<Medico>(this, android.R.layout.simple_list_item_1, list);
+		adapter.sort(new Comparator<Medico>() 
+		{
+			@Override
+			public int compare(Medico arg0, Medico arg1)
+			{
+				return arg0.getNombre().compareToIgnoreCase(arg1.getNombre());
+			}
+		});
 		lista.setAdapter(adapter);
 	}
 	
@@ -102,7 +108,6 @@ public class ListaMedicoActivity extends Activity
 				{
 					if (nombreMedicoSeleccionado != null)
 					{
-						
 						Intent i = new Intent(getBaseContext(), CitaActivity.class);
 						i.putExtra("nombreMedico", nombreMedicoSeleccionado);
 						i.putExtra("direccion", direccionMedicoSeleccionado);
