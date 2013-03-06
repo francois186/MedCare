@@ -42,8 +42,17 @@ public class MedCare extends Thread
 		for (int i = 0; i < medicos.size(); i++) 
 		{
 			Medico med = medicos.get(i);
-			if(med.getCiudad().equals(nCiudad) && med.getEspecialidad().equals(nEspecialidad))
-				resp.add(med);
+			if(nCiudad.equals("Todas"))
+			{
+				if(med.getEspecialidad().equals(nEspecialidad))
+					resp.add(med);
+			}
+			else
+			{
+				if(med.getCiudad().equals(nCiudad) && med.getEspecialidad().equals(nEspecialidad))
+					resp.add(med);				
+			}
+				
 		}
 		
 		return resp;
@@ -51,6 +60,7 @@ public class MedCare extends Thread
 	
 	public static MedCare darInstancia()
 	{
+		
 		if(instancia == null)
 		{
 			instancia = new MedCare();
@@ -86,7 +96,7 @@ public class MedCare extends Thread
 			while ((s = bf.readLine()) != null)
 			{
 				String[] info = s.split("%");
-				Medico m = new Medico(info[1], info[0], info[5], info[4], info[3]);
+				Medico m = new Medico(info[1], info[0], info[5], info[4], info[2]);
 				this.medicos.add(m);
 			}
 			is.close();
@@ -104,17 +114,19 @@ public class MedCare extends Thread
 		for (int i = 0; i < medicos.size(); i++)
 		{
 			String esp = medicos.get(i).getEspecialidad();
-			if (esp.equals(ultimaEsp) || esp.equals("sub"))
+			if (esp.equals(ultimaEsp))
 				continue;
 			else
 			{
 				boolean esta = false;
 				for (int j = 0; j < especialidades.size(); j++)
+				{
 					if (esp.equals(especialidades.get(j)))
 					{
 						esta = true;
 						break;
 					}
+				}
 				if (!esta)
 				{
 					ultimaEsp = esp;

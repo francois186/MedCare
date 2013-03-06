@@ -30,6 +30,7 @@
         <activity android:name="com.medcare.activities.GuiaActivity" />
         <activity android:name="com.medcare.activities.ListaMedicoActivity"/>
         <activity android:name="com.medcare.activities.CitaActivity" />
+        <activity android:name="com.medcare.activities.ArticuloGuia" />
         
         
     </application>

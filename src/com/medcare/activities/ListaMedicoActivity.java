@@ -29,10 +29,17 @@ public class ListaMedicoActivity extends Activity
 	private boolean llamo;
 	private String nombreMedicoSeleccionado;
 	private String direccionMedicoSeleccionado;
+	private String ciudad;
+	private String especialidad;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
+		Bundle ex = getIntent().getExtras();
+		ciudad = ex.getString("ciudad");
+		especialidad = ex.getString("especialidad");
+		
 		llamo = false;
 		setContentView(R.layout.activity_lista_medicos);
 		lista = (ListView)findViewById(R.id.lista_medicos);
@@ -67,7 +74,7 @@ public class ListaMedicoActivity extends Activity
 	public void cargarMedicos()
 	{
 		MedCare m = MedCare.darInstancia();
-		list = m.getMedicos();
+		list = m.darMedicos(ciudad, especialidad);
 		ArrayAdapter<Medico> adapter = new ArrayAdapter<Medico>(this, android.R.layout.simple_list_item_1, list);
 		adapter.sort(new Comparator<Medico>() 
 		{

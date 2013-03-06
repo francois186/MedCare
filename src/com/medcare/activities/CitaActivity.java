@@ -53,16 +53,17 @@ public class CitaActivity extends Activity{
 	
 	public void crearEventoCalendario(View v)
 	{
-		c.set(anio, mes, dia, tp.getCurrentHour(), tp.getCurrentMinute(), 0);
+		Calendar x = Calendar.getInstance();
+		x.set(anio, mes, dia, tp.getCurrentHour(), tp.getCurrentMinute(), 0);
 		long inic = c.getTimeInMillis();
 		
 		Intent intent = new Intent(Intent.ACTION_EDIT)
 	    	.setType("vnd.android.cursor.item/event")
-	    	.putExtra("TITLE", "Cita con el médico "+nombreMedico)
-	    	.putExtra("ORGANIZER", "MedCare")
-	    	.putExtra("EVENT_LOCATION", direccion)
-	    	.putExtra("DURATION", "PT1H")
-			.putExtra("DTSTART", inic);
+	    	.putExtra("dtstart", inic)
+	    	.putExtra("title", "Cita con el médico "+nombreMedico)
+	    	.putExtra("eventLocation", direccion)
+	    	.putExtra("organizer", "MedCare")
+			.putExtra("duration", "PT1H");
 	    startActivity(intent);
 	}
 }

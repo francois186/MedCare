@@ -23,19 +23,6 @@ public class DirectorioActivity extends Activity
 		medcare = MedCare.darInstancia();
 		cargar();
 		setContentView(R.layout.activity_directorio);
-		if (medcare.isAlive())
-		{
-			try
-			{
-				wait(500);
-			}
-			catch (InterruptedException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		medcare.setEspecialidades();
 		inicializarDatos();
 		super.onCreate(savedInstanceState);
 	}
@@ -43,12 +30,15 @@ public class DirectorioActivity extends Activity
 	public void cargar()
 	{
 		medcare.setContext(this);
-		medcare.start();
+		medcare.run();
+		medcare.setEspecialidades();
 	}
 	
 	public void pasarVista(View v)
 	{
-		Intent i = new Intent(this, ListaMedicoActivity.class);
+		Intent i = new Intent(this, ListaMedicoActivity.class)
+			.putExtra("ciudad", (String)spCiudades.getSelectedItem())
+			.putExtra("especialidad", (String)spEspecialidades.getSelectedItem());
 		startActivity(i);
 	}
 
