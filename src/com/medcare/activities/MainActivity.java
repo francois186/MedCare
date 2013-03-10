@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends Activity 
 {
@@ -19,7 +19,7 @@ public class MainActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		Button directorio = (Button)findViewById(R.id.butt_directorio);
+		ImageButton directorio = (ImageButton)findViewById(R.id.butt_directorio);
 		directorio.setOnClickListener(new OnClickListener() 
 		{
 			@Override
@@ -30,7 +30,7 @@ public class MainActivity extends Activity
 			}
 		});
 		
-		Button guia = (Button)findViewById(R.id.butt_guia);
+		ImageButton guia = (ImageButton)findViewById(R.id.butt_guia);
 		guia.setOnClickListener(new OnClickListener() 
 		{
 			@Override

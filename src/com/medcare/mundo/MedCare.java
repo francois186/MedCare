@@ -134,5 +134,6 @@ public class MedCare extends Thread
 				}
 			}
 		}
+		java.util.Collections.sort(especialidades);
 	}
 }
