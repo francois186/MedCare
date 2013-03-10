@@ -47,6 +47,7 @@ public class ArticuloGuia extends Activity
 		contenido.setLayoutParams(lp);
 		contenido.setText(guia.getContenido());
 		contenido.setTextSize(15);
+		guia.setContenido("");
 		
 		l.addView(titutlo);
 		l.addView(contenido);

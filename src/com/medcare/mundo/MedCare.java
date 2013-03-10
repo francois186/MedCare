@@ -91,7 +91,7 @@ public class MedCare extends Thread
 			//Se debe llamar primero setContext()
 			AssetManager am = ctx.getAssets();
 			InputStream is = am.open("guia_lista.txt");
-			BufferedReader bf = new BufferedReader(new InputStreamReader(is));
+			BufferedReader bf = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 			String s;
 			while ((s = bf.readLine()) != null)
 			{

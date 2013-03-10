@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 public class GuiaActivity extends Activity
 {
 	private String[] botones = {"Crisis de asma", "Hemorragia", "Intoxicamiento", "Ataques cardiovasculares",
-			"Lesiones óseas o musculares", "Pérdida de conciencia", "Reacción alérgica", "Mordidas de animales",
+			"Fracturas", "Desmayo", "Alergia", "Mordidas de animales",
 			"Paro respiratorio", "Quemaduras", "Hipoglicemia"};
 	
 	@Override

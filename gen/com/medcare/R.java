@@ -24,10 +24,20 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int crisis_de_asma=0x7f020000;
-        public static final int doc_android=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int med_care=0x7f020003;
+        public static final int alergia=0x7f020000;
+        public static final int ataques_cardiovasculares=0x7f020001;
+        public static final int crisis_de_asma=0x7f020002;
+        public static final int desmayo=0x7f020003;
+        public static final int doc_android=0x7f020004;
+        public static final int fracturas=0x7f020005;
+        public static final int hemorragia=0x7f020006;
+        public static final int hipoglicemia=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int intoxicamiento=0x7f020009;
+        public static final int med_care=0x7f02000a;
+        public static final int mordidas_de_animales=0x7f02000b;
+        public static final int paro_respiratorio=0x7f02000c;
+        public static final int quemaduras=0x7f02000d;
     }
     public static final class id {
         public static final int action_settings=0x7f0a0012;
