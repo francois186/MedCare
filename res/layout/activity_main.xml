@@ -12,6 +12,7 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="100dp"
+        android:contentDescription="@drawable/doc_android"
         android:layout_height="100dp"
         android:layout_alignBottom="@+id/imageView1"
         android:layout_marginLeft="18dp"
@@ -30,6 +31,7 @@
 
     <ImageView
         android:id="@+id/imageView1"
+        android:contentDescription="@drawable/med_care"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/butt_directorio"
