@@ -45,8 +45,8 @@ public final class R {
         public static final int action_settings=0x7f0a0012;
         public static final int boton_crear_calendario=0x7f0a0005;
         public static final int but_enviar_infodir=0x7f0a000c;
-        public static final int butt_directorio=0x7f0a0011;
-        public static final int butt_guia=0x7f0a0010;
+        public static final int butt_directorio=0x7f0a0010;
+        public static final int butt_guia=0x7f0a0011;
         public static final int fecha_crear_calendario=0x7f0a0002;
         public static final int imageView1=0x7f0a000b;
         public static final int imageView2=0x7f0a000f;

@@ -19,16 +19,6 @@
         android:layout_toRightOf="@+id/imageView1"
         android:src="@drawable/doc_android" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/butt_guia"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="22dp"
-        android:text="@string/copyright"
-        android:textSize="12sp" />
-
     <ImageView
         android:id="@+id/imageView1"
         android:contentDescription="@drawable/med_care"
@@ -36,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/butt_directorio"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/med_care" />
 	
     <ImageButton
@@ -48,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/butt_directorio"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="15dp"
         android:text="@string/butt_guia" />
 
     <ImageButton
@@ -59,8 +49,18 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/butt_guia"
         android:layout_below="@+id/imageView2"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         android:text="@string/butt_directorio" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/butt_guia"
+        android:layout_marginTop="20dp"
+        android:text="@string/copyright"
+        android:textSize="12sp" />
 
 </RelativeLayout>
